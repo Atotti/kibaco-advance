@@ -3,5 +3,4 @@
 
 Chromeストアへの公開は現在審査中です。
 
-
-![Uploading screenshot.png…]()
+![screenshot](https://github.com/Atotti/kibaco-advance/assets/56724676/fa1d4e85-ec93-4d7e-9861-6fcf0aac794b)
