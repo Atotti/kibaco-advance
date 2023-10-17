@@ -1,0 +1,17 @@
+{
+    "name": "kobaco-advance1.0.0",
+    "author": "@aya172957",
+    "description": "課題提出時にPDFのプレビューを表示させる拡張機能",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": [
+                "https://kibaco.tmu.ac.jp/portal/*"
+            ],
+            "js": [
+                "preview.js"
+            ]
+        }
+    ]
+  }
