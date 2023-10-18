@@ -12,6 +12,14 @@
             "js": [
                 "preview.js"
             ]
+        },
+        {
+            "matches": [
+                "https://kibaco.tmu.ac.jp/portal/*"
+            ],
+            "css": [
+                "preview.css"
+            ]
         }
     ]
   }

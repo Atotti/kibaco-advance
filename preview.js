@@ -14,13 +14,28 @@ function addPdf() {
         iframe.src = pdf_doc;
         iframe.width = "100%";
         iframe.height = "800px";
-        iframe.style.border = "none";
+        iframe.style.border = "4px solid green";
     
         // PDFを追加する場所を見つける
         let target = document.querySelector("#col1 > div > div");
     
         // iframe要素を追加する
         target.appendChild(iframe);
+      } else if((String(pdf_doc).includes(".png"))) { // 画像の場合も表示させる
+        // 画像を表示するためのimg要素を作成する
+        let img = document.createElement("img");
+        img.src = pdf_doc;
+        img.width = "100%";
+        img.height = "800px";
+        img.style.border = "4px solid green";
+        img.style.borderRadius = "10px";
+        img.className = "preview"
+    
+        // 画像を追加する場所を見つける
+        let target = document.querySelector("#col1 > div > div");
+    
+        // img要素を追加する
+        target.appendChild(img);
       }
   }
 }
