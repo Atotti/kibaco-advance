@@ -1,8 +1,8 @@
 {
-    "name": "kobaco-advance1.0.0",
+    "name": "kobaco-advance",
     "author": "@aya172957",
     "description": "課題提出時にPDFのプレビューを表示させる拡張機能",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "content_scripts": [
         {
