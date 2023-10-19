@@ -2,7 +2,7 @@
     "name": "kibaco-advance",
     "author": "@aya172957",
     "description": "課題提出時にPDFのプレビューを表示させる拡張機能",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "manifest_version": 3,
     "icons": {
         "16": "icon/icon16.png",
