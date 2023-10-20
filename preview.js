@@ -2,7 +2,8 @@
 function addPdf() {
     // 確認ページか判定
     let progres = document.querySelector("#col1 > div > div > div.progress-container > div:nth-child(2) > div");
-    if (progres.style.width == "33.3333%") {
+    let disp = document.querySelector("#col1 > div > div > h3").textContent;
+    if (progres.style.width == "33.3333%" && disp.includes("提出確認")) {
 
       // PDFを見つける
       let pdf_doc = document.querySelector("#col1 > div > div > ul > li > a");
