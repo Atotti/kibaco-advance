@@ -15,7 +15,9 @@
                 "https://kibaco.tmu.ac.jp/portal/*"
             ],
             "js": [
-                "preview.js"
+                "preview.js",
+                "notification.js",
+                "timetable.js"
             ]
         },
         {
