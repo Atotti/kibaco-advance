@@ -17,7 +17,6 @@ function notification() {
         throw new Error('Network response was not ok.');
     })
     .then(data => {
-        console.log(data);
         // JSON 形式のデータを処理して DOM に追加
 
         // お知らせページを作成するための要素を生成
@@ -197,8 +196,8 @@ function allowClick(object)
 
 
     // 表をページに追加
-    const target = document.querySelector("#col1of2");
-    target.appendChild(segment);
+    const target = document.querySelector("#col2of2")
+    target.insertBefore(segment, target.firstChild);
 }
 
 
