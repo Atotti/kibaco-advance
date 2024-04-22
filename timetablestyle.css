@@ -3,6 +3,7 @@
 table.table {
     width: 100%; /* 表をページの全幅に広げます */
     border-collapse: collapse; /* セルの境界線を一本線にします */
+    table-layout: fixed; /* 列幅を固定にします */
     margin-top: 20px; /* 表の上にマージンを設定 */
 }
 
@@ -17,6 +18,7 @@ table.table td, table.table th {
     border: 1px solid #ddd; /* 灰色の薄い境界線 */
     padding: 8px; /* 内側の余白 */
     text-align: center; /* テキストを中央揃えに */
+    width: 16.6%; /* 各セルの幅を固定（100% / 6列 = 約16.6%） */
 }
 
 /* 時限セルのスタイリング */
