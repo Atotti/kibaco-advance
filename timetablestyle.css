@@ -1,0 +1,36 @@
+#col1of2{
+/* 時間割表全体のスタイリング */
+table.table {
+    width: 100%; /* 表をページの全幅に広げます */
+    border-collapse: collapse; /* セルの境界線を一本線にします */
+    margin-top: 20px; /* 表の上にマージンを設定 */
+}
+
+/* ヘッダー行のスタイリング */
+table.table thead th {
+    background-color: #e3f2fd; /* 青っぽい背景色 */
+    color: #333; /* 文字色 */
+}
+
+/* セルのスタイリング */
+table.table td, table.table th {
+    border: 1px solid #ddd; /* 灰色の薄い境界線 */
+    padding: 8px; /* 内側の余白 */
+    text-align: center; /* テキストを中央揃えに */
+}
+
+/* 時限セルのスタイリング */
+table.table tbody tr td:first-child {
+    background-color: #f0f0f0; /* 時限を示すセルの灰色っぽい背景色 */
+}
+
+/* リンクのスタイリング */
+table.table td a {
+    color: #0066cc; /* リンクの色 */
+    text-decoration: none; /* アンダーラインを消す */
+}
+
+table.table td a:hover {
+    text-decoration: underline; /* ホバー時にアンダーラインを表示 */
+}
+}

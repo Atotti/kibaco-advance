@@ -25,7 +25,8 @@
                 "https://kibaco.tmu.ac.jp/portal/*"
             ],
             "css": [
-                "preview.css"
+                "preview.css",
+                "timetablestyle.css"
             ]
         }
     ]

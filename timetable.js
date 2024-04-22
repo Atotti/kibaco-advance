@@ -93,7 +93,7 @@ function createScheduleTable(classes) {
         period.forEach((cls) => {
             const cell = document.createElement('td');
             if (cls) {
-                cell.innerHTML = `<a href="${cls.link}" target="_blank">${cls.title}</a>`;
+                cell.innerHTML = `<a href="${cls.link}">${cls.title}</a>`;
             }
             row.appendChild(cell);
         });
