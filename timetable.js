@@ -32,7 +32,8 @@ async function showTimeTable() {
 
 function getDayAndPeriod() {
     return new Promise((resolve, reject) => {
-        fetch(`https://kibaco.tmu.ac.jp/portal/site/user/tool/20485f66-b6b0-4364-963b-7d0bde97d106`)
+        const url = document.querySelector("#toolMenu > ul > li:nth-child(3) > a").href;
+        fetch(url)
         .then(response => response.text())
         .then(html => {
             const parser = new DOMParser();
