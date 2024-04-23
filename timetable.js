@@ -110,6 +110,10 @@ function createScheduleTable(classes) {
     } else {
         console.error("対象の要素または時間割表が見つかりません。");
     }
+
+    // トップページを訪れるようにfetch
+    const url = document.querySelector("body > div.Mrphs-portalWrapper > div.Mrphs-mainHeader.is-maximized > div.Mrphs-topHeader > header > a.Mrphs-headerLogo--institution").href;
+    fetch(url);
 }
 
 

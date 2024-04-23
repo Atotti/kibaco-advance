@@ -8,7 +8,7 @@ function notification() {
     displayAnnouncements(id);
 }
 
-function displayAnnouncements(url) {
+function displayAnnouncements(id) {
     const segment = document.createElement('div');
     segment.className = 'Mrphs-container Mrphs-sakai-mytask';
 
