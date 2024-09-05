@@ -1,3 +1,4 @@
+// 2024年の前期のlecture_id一覧 (石池のシラバスDBよりエクスポート)
 const lectureIdSet = new Set([
     "R0926",
     "R0517",
@@ -3560,15 +3561,16 @@ function isElementIncluded(targetElement) {
 }
 
 async function showTimeTable() {
+    // トップページか確認
     if (document.querySelector("#col2of2 > div > nav > h2")?.textContent !== '大学からのお知らせ') {
         return;
     }
     const classSchedules = await getDayAndPeriod();
     const nowLecture = [];
-    console.log(classSchedules)
 
     classSchedules.forEach(lecture => {
-        if (isElementIncluded(lecture.classCode)) {
+        // 前期以外の授業のみ取得(2024後期対応用)
+        if (!isElementIncluded(lecture.classCode)) {
             nowLecture.push({
                 title: lecture.lectureName,
                 link: lecture.link,
@@ -3577,11 +3579,12 @@ async function showTimeTable() {
             });
         }
     });
-    console.log(nowLecture)
-
+    
     createScheduleTable(nowLecture);
 }
 
+// 授業一覧をfetchして授業情報を取得する
+// kibacoの仕様により自動的に最新年度の授業情報が取得される
 function getDayAndPeriod() {
     return new Promise((resolve, reject) => {
         const url = document.querySelector("#toolMenu > ul > li:nth-child(3) > a").href;
@@ -3665,7 +3668,7 @@ function createScheduleTable(classes) {
         console.error("対象の要素または時間割表が見つかりません。");
     }
 
-    // トップページを訪れるようにfetch
+    // 次アクセスしたときにトップページを訪れるようにfetch
     const url = document.querySelector("body > div.Mrphs-portalWrapper > div.Mrphs-mainHeader.is-maximized > div.Mrphs-topHeader > header > a.Mrphs-headerLogo--institution").href;
     fetch(url);
 }
