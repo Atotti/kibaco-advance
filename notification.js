@@ -15,7 +15,7 @@ function displayAnnouncements(id) {
     segment.innerHTML = `
 
 <div class="Mrphs-toolBody Mrphs-toolBody--sakai-mytask">
-<iframe name="Main${id}" id="Main${id}" title="お知らせ " class="portletMainIframe" height="100000" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" allowfullscreen="allowfullscreen" allow="autoplay *;fullscreen *;encrypted-media *;camera 'self';microphone 'self'" src="https://kibaco.tmu.ac.jp/portal/tool/${id}?panel=Main" style="height: 10000px;">
+<iframe name="Main${id}" id="Main${id}" title="お知らせ " class="portletMainIframe" height="100000" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" allowfullscreen="allowfullscreen" allow="autoplay *;fullscreen *;encrypted-media *;camera 'self';microphone 'self'" src="https://kibaco.tmu.ac.jp/portal/tool/${id}?panel=Main" style="height: 1000px;">
 </iframe>
 </div>
 
