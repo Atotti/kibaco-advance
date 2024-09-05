@@ -2,7 +2,7 @@
     "name": "kibaco-advance",
     "author": "@aya172957",
     "description": "課題提出時にPDFのプレビューを表示させる拡張機能, お知らせと時間割も復活させる",
-    "version": "2.1.0",
+    "version": "2.1.2",
     "manifest_version": 3,
     "icons": {
         "16": "icon/icon16.png",
