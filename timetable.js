@@ -3560,25 +3560,38 @@ function isElementIncluded(targetElement) {
     return lectureIdSet.has(targetElement);
 }
 
+// 今が前期かを判別する関数
+function isFirstSemester(date = new Date()) {
+	const month = date.getMonth() + 1; // getMonth() は 0（1月）〜11（12月）を返す
+	return month >= 4 && month <= 8;
+}
+
 async function showTimeTable() {
     // トップページか確認
     if (document.querySelector("#col2of2 > div > nav > h2")?.textContent !== '大学からのお知らせ') {
         return;
     }
     const classSchedules = await getDayAndPeriod();
-    const nowLecture = [];
+	const nowLecture = [];
 
-    classSchedules.forEach(lecture => {
-        // 前期以外の授業のみ取得(2024後期対応用)
-        if (!isElementIncluded(lecture.classCode)) {
-            nowLecture.push({
-                title: lecture.lectureName,
-                link: lecture.link,
-                lecture_id: lecture.classCode,
-                timeTable: lecture.timeTable
-            });
-        }
-    });
+	const semester = isFirstSemester() ? "first" : "second";
+
+	classSchedules.forEach((lecture) => {
+
+		const isFirstSemesterLecture = isElementIncluded(lecture.classCode);
+        const isDisplayLecture =
+			(semester === "first" && isFirstSemesterLecture) ||
+			(semester === "second" && !isFirstSemesterLecture);
+
+		if (isDisplayLecture) {
+			nowLecture.push({
+				title: lecture.lectureName,
+				link: lecture.link,
+				lecture_id: lecture.classCode,
+				timeTable: lecture.timeTable
+			});
+		}
+	});
     
     createScheduleTable(nowLecture);
 }
