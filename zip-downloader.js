@@ -51,8 +51,9 @@ async function downloadZip() {
     );
     if (!apiRes.ok) { alert(`資料一覧の取得に失敗しました (${apiRes.status})`); throw new Error('api ' + apiRes.status); }
 
-    const root = (await apiRes.json()).content_collection[0];
-
+    const data = await apiRes.json();
+    const root = data?.content_collection?.[0];
+    if (!root) { alert('資料一覧の取得に失敗しました (invalid response)'); throw new Error('invalid api response'); }
     // 再帰でファイルを収集（フォルダ階層をzipPathとして保持）
     const files = [];
     (function walk(node, path) {
