@@ -91,7 +91,7 @@ async function downloadZip() {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    URL.revokeObjectURL(dlUrl);
+    setTimeout(() => URL.revokeObjectURL(dlUrl), 1000);
 
     btn.textContent = 'DONE.';
   } catch (e) {
