@@ -28,6 +28,16 @@
                 "preview.css",
                 "timetablestyle.css"
             ]
+        },
+        {
+            "matches": [
+                "https://kibaco.tmu.ac.jp/portal/site/*/tool/*"
+            ],
+            "js": [
+                "jszip.min.js",
+                "zip-downloader.js"
+            ],
+            "run_at": "document_idle"
         }
     ]
   }
