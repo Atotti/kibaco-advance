@@ -1,11 +1,3 @@
-// 資料ページ（Resources）かどうか確認してボタンを挿入
-function isResourcePage() {
-  // 資料ツールのページURL、またはタイトル要素のどちらかで判定
-  const isResourceTool = /\/tool\//.test(location.pathname)
-    && !!document.querySelector('h2.Mrphs-toolTitleNav__title, [class*="toolTitleNav"]');
-  return isResourceTool && !!document.querySelector('table');
-}
-
 function insertButton() {
   if (document.getElementById('kibaco-zip-btn')) return;
 
@@ -106,8 +98,6 @@ async function downloadZip() {
 }
 
 // ページ読み込み後にボタンを挿入（SPAのナビゲーション変化にも対応）
-const observer = new MutationObserver(() => {
-  if (isResourcePage()) insertButton();
-});
+const observer = new MutationObserver(() => insertButton());
 observer.observe(document.body, { childList: true, subtree: true });
-if (isResourcePage()) insertButton();
+insertButton();
