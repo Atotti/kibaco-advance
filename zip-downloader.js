@@ -11,7 +11,6 @@ function insertButton() {
   btn.textContent = '⬇ ZIP DL';
   btn.title = 'Download all files as ZIP (preserving folder structure)';
 
-  // 紺色・角丸復活・btn-groupのくっつき解消
   btn.style.cssText = `
     margin-left: 8px !important;
     border-radius: 4px !important;
@@ -21,7 +20,7 @@ function insertButton() {
     font-weight: bold;
   `;
 
-  btn.onclick = downloadZip;   // ← これが抜けていたので反応しなくなっていました
+  btn.onclick = downloadZip;
 
   copyBtn.insertAdjacentElement('afterend', btn);
 }
@@ -32,7 +31,6 @@ async function downloadZip() {
   btn.disabled = true;
 
   try {
-    // --- 案A: DOMではなくSakai Content APIから階層取得（「すべて展開」不要）---
     const m = location.pathname.match(/\/site\/([^/]+)/);
     const siteId = m ? m[1] : null;
     if (!siteId) { alert('Failed to get site ID.'); throw new Error('no siteId'); }
