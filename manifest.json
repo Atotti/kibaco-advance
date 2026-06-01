@@ -1,8 +1,8 @@
 {
     "name": "kibaco-advance",
     "author": "@aya172957",
-    "description": "課題提出時にPDFのプレビューを表示させる拡張機能, お知らせと時間割も復活させる",
-    "version": "2.1.3",
+    "description": "課題提出時にPDFのプレビューを表示させる拡張機能, お知らせと時間割も復活させる．資料の一括ダウンロードにも対応．",
+    "version": "2.1.4",
     "manifest_version": 3,
     "icons": {
         "16": "icon/icon16.png",
@@ -28,6 +28,16 @@
                 "preview.css",
                 "timetablestyle.css"
             ]
+        },
+        {
+            "matches": [
+                "https://kibaco.tmu.ac.jp/portal/site/*/tool/*"
+            ],
+            "js": [
+                "jszip.min.js",
+                "zip-downloader.js"
+            ],
+            "run_at": "document_idle"
         }
     ]
   }
